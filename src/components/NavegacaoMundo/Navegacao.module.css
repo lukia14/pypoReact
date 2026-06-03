@@ -1,0 +1,29 @@
+.itemMenu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.itemMenu i {
+    font-size: 1.2rem;
+    color: #38b6ff; /* Azul brilhante dos botões */
+}
+
+.itemMenu:hover {
+    color: #38b6ff;
+    transform: translateY(-2px);
+}
+.menuDashboard {
+    display: flex;
+    gap: 25px;
+    background-color: rgba(13, 31, 61, 0.85); /* Tom azul-marinho do header */
+    padding: 12px 30px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}

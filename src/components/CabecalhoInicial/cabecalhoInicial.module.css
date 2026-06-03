@@ -1,0 +1,76 @@
+:root{
+--branco: white;
+--azul: #0a1f44;
+--azul-diferente: rgba(33, 76, 194, 1);
+--preto: #000;
+--azul-claro: #4da6ff;
+--azul-textos: #87CEEB;
+--azul-textos2: #1E90FF;
+--cor-rodape: #1B263B;
+--cor-fundo1:rgb(26, 63, 70);
+}
+
+.containerMenu{
+    display: flex;
+    background-color: var(--azul);
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.t1{
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: var(--branco);
+}
+
+.containerMenu2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menuItem{
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menuItem::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--azul-claro);
+    transition: width 0.3s ease;
+}
+
+.menuItem:hover::after{
+    width: 100%;
+}
+
+.menuItem:hover{
+    color: var(--azul-claro);
+}
+
+.item1{
+    background-color: var(--azul-claro);
+    color: var(--preto);
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 8px 14px;
+}
+
+.item1:hover{
+    background-color: var(--azul-textos2);
+    color: white;
+    transform: scale(1.05);
+}

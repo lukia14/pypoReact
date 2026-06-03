@@ -1,0 +1,35 @@
+:root{
+--branco: white;
+--azul: #0a1f44;
+--azul-diferente: rgba(33, 76, 194, 1);
+--preto: #000;
+--azul-claro: #4da6ff;
+--azul-textos: #87CEEB;
+--azul-textos2: #1E90FF;
+--cor-rodape: #1B263B;
+--cor-fundo1:rgb(26, 63, 70);
+}
+
+body{
+    background-color:var(--cor-fundo1);
+}
+
+*{
+    margin:0;
+    box-sizing:border-box;
+}
+
+.container2{
+    margin: 80px auto;
+    display:flex;
+    justify-content:center;
+    padding: 20px;
+}
+
+.containerPrincipalCaixas{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+}

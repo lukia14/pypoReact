@@ -1,0 +1,34 @@
+.tituloPagina {
+    color: #38b6ff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(56, 182, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.telaMundosContainer {
+    background: radial-gradient(circle, #1a444e 0%, #11262b 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+.containerMundos {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Garante responsividade em telas menores */
+}

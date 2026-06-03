@@ -1,0 +1,26 @@
+.item{
+    background: linear-gradient(135deg, #1E90FF, #0a1f44);
+    padding: 25px;
+    border-radius: 15px;
+    width: 240px;
+    min-height: 160px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.item h2{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.item p{
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.item:hover{
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
