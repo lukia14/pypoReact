@@ -1,0 +1,220 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.telaLojaContainer {
+    background: radial-gradient(circle, #1a444e 0%, #11262b 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lojaHeaderActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.tituloLoja {
+    color: #38b6ff;
+    font-size: 2.8rem;
+    margin: 10px 0 5px 0;
+    text-shadow: 0 0 15px rgba(56, 182, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.subtituloLoja {
+    color: #e0e6ed;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.layoutLojaCorpo {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.secaoInventario {
+    flex: 0 0 280px;
+    background: linear-gradient(135deg, #13323a 0%, #0d1e22 100%);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(56, 182, 255, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 30px; 
+}
+
+.secaoInventario h2 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.secaoInventario h2 i {
+    color: #38b6ff;
+}
+
+.gridLoja {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 30px;
+    flex: 1;
+}
+.flashContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none; 
+}
+
+.flashMessage {
+    pointer-events: auto; 
+    min-width: 280px;
+    max-width: 400px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.flashSucesso {
+    background-color: #10b981;
+    border-left: 5px solid #047857;
+}
+
+.flashAlerta {
+    background-color: #f59e0b;
+    border-left: 5px solid #b45309;
+}
+
+.flashErro {
+    background-color: #ef4444;
+    border-left: 5px solid #b91c1c;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(120%); 
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .layoutLojaCorpo {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .secaoInventario {
+        width: 100%;
+        flex: none;
+        position: static; 
+    }
+
+    .tituloLoja {
+        font-size: 2rem;
+    }
+
+    .subtituloLoja {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .lojaHeaderActions {
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .saldoUsuario {
+        padding: 8px 15px;
+        font-size: 0.95rem;
+    }
+
+    .gridLoja {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    .cardItem {
+        padding: 15px 10px;
+    }
+
+    .areaInterativa {
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .iconeItem {
+        font-size: 2.5rem;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .descricaoItem {
+        position: relative;
+        opacity: 1 !important;
+        visibility: visible !important;
+        height: auto;
+    }
+
+    .descricaoItem p {
+        font-size: 0.8rem;
+        color: #b0c4de;
+    }
+
+    .nomeItem {
+        font-size: 1.1rem;
+        margin: 8px 0;
+    }
+
+    .precoItem {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .botaoComprar {
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .gridLoja {
+        grid-template-columns: 1fr;
+    }
+}

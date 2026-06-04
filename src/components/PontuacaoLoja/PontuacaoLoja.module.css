@@ -1,0 +1,14 @@
+.saldoUsuario {
+    background-color: rgba(13, 31, 61, 0.85);
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.pontuacao {
+    font-weight: bold;
+}

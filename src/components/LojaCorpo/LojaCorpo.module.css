@@ -1,0 +1,18 @@
+.inventarioCabecalho {
+    display: flex !important; /* Garante que o flexbox está ativo */
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.inventarioCabecalho .txtColuna {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #ffffff; /* Mudamos para branco puro para dar contraste máximo */
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
