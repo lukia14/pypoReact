@@ -1,0 +1,12 @@
+.dica {
+    position: absolute;
+    right: -200px;
+    top: 50px;
+    width: 200px;
+    color: #000;
+}
+
+.dica img {
+    max-width:400px;
+    height: auto;
+}

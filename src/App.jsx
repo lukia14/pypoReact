@@ -8,9 +8,9 @@ function App() {
   
   return (
     <>
-      <Fase/>
-     </>
-     )
+      <TelaInicial/>
+    </>
+  )
 }
 
 export default App

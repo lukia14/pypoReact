@@ -1,0 +1,24 @@
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.titulo {
+    background-color: #3bb5fc;
+    color: #000;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.cubo{
+    width:40px;
+    margin-right:10px;
+}
+
+.icone{
+    color:yellow;
+}
