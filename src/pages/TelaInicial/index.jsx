@@ -22,7 +22,7 @@ function TelaInicial(){
 
 ]
     return(
-        <>
+        <div id="principal">
             <CabecalhoInicial/>
             <Carrosel/>
             <main className={estilos.container2}>
@@ -36,7 +36,7 @@ function TelaInicial(){
                     ))}
             </div>
         </main>
-        </>
+        </div>
     )
 }
 export default TelaInicial

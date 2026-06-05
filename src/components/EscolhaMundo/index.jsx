@@ -1,4 +1,5 @@
 import styles from './Mundo.module.css'
+import { Link } from 'react-router-dom';
 function EscolhaMundo({titulo,descricao,icone}){
     return(
             <div className={`${styles.cardMundo} ${styles.mundoPortugol}`}>
@@ -7,7 +8,7 @@ function EscolhaMundo({titulo,descricao,icone}){
                 </div>
                 <h2>{titulo}</h2>
                 <p>{descricao}</p>
-                <a href="/fase/portugol" className={styles.botaoEntrar}>Entrar</a>
+                <Link to='/fase' className={styles.botaoEntrar}>Entrar</Link>
             </div>
     )
 }

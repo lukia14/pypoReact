@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a1120; /* Fundo escuro idêntico ao do app */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  background: linear-gradient(145deg, #111c32, #0d1627); /* Degradê sutil do card */
+  border: 1px solid rgba(56, 189, 248, 0.2); /* Borda fina ciano semi-transparente */
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.iconeErro {
+  font-size: 50px;
+  color: #38bdf8; /* Tom ciano dos destaques do seu app */
+  margin-bottom: 15px;
+  animation: float 3s ease-in-out infinite; /* Efeito flutuante opcional */
+}
+
+.titulo {
+  font-size: 80px;
+  font-weight: 800;
+  margin: 0;
+  color: #38bdf8;
+  line-height: 1;
+}
+
+.subtitulo {
+  font-size: 22px;
+  color: #ffffff;
+  margin: 10px 0 15px 0;
+}
+
+.descricao {
+  color: #94a3b8; /* Texto cinza claro secundário */
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.botaoVoltar {
+  display: inline-block;
+  background-color: #0284c7; /* Azul padrão dos botões */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+}
+
+.botaoVoltar:hover {
+  background-color: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Animação para deixar o ícone flutuando */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
