@@ -1,0 +1,16 @@
+.container2 {
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    /* Adicionado padding-bottom para o conteúdo não ficar escondido atrás do rodapé fixo */
+    padding-bottom: 120px; 
+}
+
+.containerPrincipalCaixas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+}

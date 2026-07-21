@@ -1,9 +1,10 @@
-import './App.css'
-import RoutesMain from './routes/RoutesMain'
+import RoutesMain from './routes'
 function App() {
-  
+
   return (
+    <>
       <RoutesMain/>
+    </>
   )
 }
 
