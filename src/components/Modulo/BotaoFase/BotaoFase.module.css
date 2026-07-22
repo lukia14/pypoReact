@@ -1,0 +1,77 @@
+.phase {
+    text-decoration: none;
+    z-index: 1;
+    transition: transform 0.2s;
+    position: relative;
+    display: inline-block;
+}
+
+.phase:hover {
+    filter: brightness(1.1);
+}
+
+.bubble {
+    width: 75px;
+    height: 75px;
+    background-color: #1e90ff; /* --azul-diferente */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 28px;
+    font-weight: 800;
+    box-shadow: 0 8px 0 #38bdf8; /* --azul-textos */
+    cursor: pointer;
+}
+
+/* Posições para variação na trilha (opcional) */
+.left {
+    transform: translateX(-150px);
+}
+
+.right {
+    transform: translateX(150px);
+}
+
+.center {
+    transform: translateX(0);
+}
+
+/* Tooltip da Fase */
+.phaseTooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #0b132b; /* --cor-de-fundo-caixa */
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.phaseTooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #0b132b transparent transparent transparent;
+}
+
+.phase:hover .phaseTooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
