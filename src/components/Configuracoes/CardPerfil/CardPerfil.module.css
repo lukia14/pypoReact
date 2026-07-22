@@ -1,0 +1,103 @@
+.configCard {
+    background-color: rgba(13, 31, 61, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px 30px;
+}
+
+.cardHeaderPypo {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(56, 182, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.cardHeaderPypo h3 {
+    color: #38b6ff;
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cardHeaderPypo p {
+    color: #a0aec0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.formLinha {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.formGrupo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formLabel {
+    color: #e0e6ed;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.inputPypo {
+    background-color: rgba(10, 24, 48, 0.9);
+    border: 1px solid rgba(56, 182, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.inputPypo:focus {
+    border-color: #38b6ff;
+    box-shadow: 0 0 10px rgba(56, 182, 255, 0.3);
+    outline: none;
+}
+
+.formAcoesSalvar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.btnSalvar {
+    background-color: #23a851;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(35, 168, 81, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btnSalvar:hover {
+    background-color: #1c873f;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .formLinha {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btnSalvar {
+        width: 100%;
+        justify-content: center;
+    }
+}

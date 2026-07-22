@@ -1,0 +1,18 @@
+.crudContainer {
+    background: radial-gradient(circle, #1a444e 0%, #11262b 100%);
+    min-height: 100vh; /* Permite que o container cresça além da altura da tela */
+    height: auto;      /* Garante que a altura se ajuste ao conteúdo */
+    overflow-y: auto;  /* Habilita a rolagem vertical se necessário */
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.configEstrutura {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

@@ -1,18 +1,17 @@
-
 .slogan {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--azul-diferente);
-    margin: 20px;
+    margin: 5px 0; /* Trocado de 20px para 5px */
 }
 
 .slideshow {
     position: relative;
     width: 100%;
-    max-width: 380px; /* Reduzido de 460px/500px para 380px */
+    max-width: 360px;
     aspect-ratio: 5 / 3;
     overflow: hidden;
-    margin: 10px auto;
+    margin: 5px auto; /* Trocado de 10px para 5px */
 }
 
 .slide {

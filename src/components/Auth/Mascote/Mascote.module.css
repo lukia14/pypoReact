@@ -5,7 +5,7 @@
 }
 
 .imagem {
-    max-width: 320px;
-    width: 100%;
-    height: auto;
+    max-height: 200px; /* Reduzido de 280px para 200px */
+    width: auto;
+    object-fit: contain;
 }

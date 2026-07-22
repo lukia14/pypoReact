@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Cabecalho from '../../components/Home/Cabecalho';
 import Carrossel from '../../components/Home/Carrossel';
 import BotaoResumo from '../../components/Home/BotaoResumo';
@@ -6,8 +6,21 @@ import Rodape from '../../components/Home/Rodape';
 import styles from './Home.module.css';
 
 export default function Home() {
+
+    // Esconde a barra de rolagem global quando entra na Home
+    // e restaura a rolagem quando sai para outra página (como Configurações)
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        };
+    }, []);
+
     return (
-        <>
+        <div className={styles.homeWrapper}>
             <Cabecalho />
             
             <Carrossel />
@@ -42,6 +55,6 @@ export default function Home() {
             </main>
 
             <Rodape />
-        </>
+        </div>
     );
 }

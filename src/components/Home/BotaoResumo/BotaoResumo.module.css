@@ -1,15 +1,18 @@
 .item {
     background: linear-gradient(135deg, #1E90FF, #0a1f44);
-    padding: 25px;
+    padding: 15px 20px; /* Reduzido de 25px para 15px 20px */
     border-radius: 15px;
-    width: 240px;
-    min-height: 160px;
+    width: 220px; /* Reduzido de 240px para 220px */
+    min-height: 120px; /* Reduzido de 160px para 120px */
     color: white;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     transition: all 0.3s ease;
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .item h2, .item p {

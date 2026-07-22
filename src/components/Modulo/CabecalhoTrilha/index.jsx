@@ -17,7 +17,7 @@ export default function CabecalhoTrilha() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/perfil">
+                        <Link to="/configuracoes">
                             <i className="fa-solid fa-user"></i>
                             Perfil
                         </Link>
