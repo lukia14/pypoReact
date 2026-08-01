@@ -1,0 +1,35 @@
+.item {
+    background: linear-gradient(135deg, #1E90FF, #0a1f44);
+    padding: 15px 20px; /* Reduzido de 25px para 15px 20px */
+    border-radius: 15px;
+    width: 220px; /* Reduzido de 240px para 220px */
+    min-height: 120px; /* Reduzido de 160px para 120px */
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item h2, .item p {
+    color: white; 
+}
+
+.item h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.item p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
