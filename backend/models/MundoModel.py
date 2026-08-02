@@ -8,8 +8,9 @@ class MundoModel(bd.Model):
     def __repr__(self):
         return'<Mundo %r>' % self.linguagem
     
-    def modeloMundo(self,form):
-        linguagem = form.get('linguagem')
-        novo_mundo = MundoModel(linguagem=linguagem)
-        return novo_mundo
+    def to_dict(self):
+        return {
+            'idMundo': self.idMundo,
+            'linguagem': self.linguagem
+        }
     
