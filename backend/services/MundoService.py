@@ -1,4 +1,5 @@
 from daos.MundoDao import MundoDao
+from flask import request
 oMundoDao = MundoDao()
 
 class MundoService:
@@ -11,11 +12,13 @@ class MundoService:
     def get_mundo_por_id(self, id):
         return oMundoDao.get_mundo_por_id(id)
 
-    def create_mundo(self, data):
-        return oMundoDao.create_mundo(data)
+    def post_mundo(self):
+        data = request.get_json()
+        return oMundoDao.post_mundo(data)
 
-    def update_mundo(self, id, data):
-        return oMundoDao.update_mundo(id, data)
+    def put_mundo(self, id):
+        data = request.get_json()
+        return oMundoDao.put_mundo(id, data)
 
     def delete_mundo(self, id):
         return oMundoDao.delete_mundo(id)

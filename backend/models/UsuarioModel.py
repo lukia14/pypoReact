@@ -8,11 +8,11 @@ class UsuarioModel(bd.Model):
     senha = bd.Column(bd.String(25), nullable = False, unique=False)
     pontuacao = bd.Column(bd.Integer, nullable = False)
 
-    @staticmethod
-    def modeloUsuario(form):
-        nickname = form.nickname.data
-        email = form.email.data
-        senha = form.senha.data
-        email = form.email.data
-        usuario = UsuarioModel(nickname=nickname, email=email, senha=senha)
-        return usuario
+    def to_dict(self):
+        return {
+            'idUsuario': self.idUsuario,
+            'nickname': self.nickname,
+            'email': self.email,
+            'pontuacao': self.pontuacao,
+            # Omita a senha por boas práticas de segurança na API
+        }
