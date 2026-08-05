@@ -1,14 +1,3 @@
-.crudContainer {
-    background: radial-gradient(circle, #1a444e 0%, #11262b 100%);
-    min-height: 100vh; /* Permite que o container cresça além da altura da tela */
-    height: auto;      /* Garante que a altura se ajuste ao conteúdo */
-    overflow-y: auto;  /* Habilita a rolagem vertical se necessário */
-    padding: 40px 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .configEstrutura {
     max-width: 900px;
     width: 100%;
@@ -16,3 +5,27 @@
     flex-direction: column;
     gap: 25px;
 }
+
+html, body, #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo1);
+    overflow: hidden;
+}
+
+.crudContainer {
+    background: radial-gradient(circle, #1a444e 0%, #11262b 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+    overflow-y: auto;
+    max-height: 100vh; 
+}
+
+
+

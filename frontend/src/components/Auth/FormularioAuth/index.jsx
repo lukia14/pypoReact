@@ -23,23 +23,23 @@ export default function FormularioAuth({ tipo }) {
 
             {/* Inputs */}
            <div className={styles.inputsContainer}>
-    {isCadastro && (
-        <div className={styles.inputGrupo}>
-            <label htmlFor="nickname">Nickname</label>
-            <input type="text" id="nickname" name="nickname" required />
-        </div>
-    )}
+                {isCadastro && (
+                    <div className={styles.inputGrupo}>
+                        <label htmlFor="nickname">Nickname</label>
+                        <input type="text" id="nickname" name="nickname" required />
+                    </div>
+                )}
 
-    <div className={styles.inputGrupo}>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" required />
-    </div>
+                <div className={styles.inputGrupo}>
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
 
-    <div className={styles.inputGrupo}>
-        <label htmlFor="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required />
-    </div>
-</div>  
+                <div className={styles.inputGrupo}>
+                    <label htmlFor="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required />
+                </div>
+            </div>  
 
             {/* Botão Enviar */}
             <button type="submit" className={styles.botaoEnviar}>
