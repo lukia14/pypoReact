@@ -1,7 +1,7 @@
 from models.MundoModel import MundoModel
 from flask import jsonify
 from database import bd
-
+from sqlalchemy import func
 class MundoDao:
     def __init__(self):
         pass
@@ -18,11 +18,23 @@ class MundoDao:
         else:
             return jsonify({'message': 'Mundo not found'}), 404
 
+   # No MundoDao.py
     def post_mundo(self, mundo):
-        mundo = MundoModel(idMundo=mundo['idMundo'], linguagem=mundo['linguagem'])
-        bd.session.add(mundo)
+        # Se receber uma lista, pega o primeiro elemento
+        if isinstance(mundo, list):
+            mundo = mundo[0]
+
+        idMundo = bd.session.query(func.max(MundoModel.idMundo)).scalar()
+        # Garante incremento de ID se a tabela estiver vazia
+        idMundo = (idMundo or 0) + 1
+
+        novo_mundo = MundoModel(
+            idMundo=idMundo,
+            linguagem=mundo['linguagem'],
+        )
+        bd.session.add(novo_mundo)
         bd.session.commit()
-        return jsonify(mundo.to_dict()), 201
+        return jsonify(novo_mundo.to_dict()), 201
 
     def put_mundo(self, id, mundo):
         mundo_existente = MundoModel.query.get(id)
