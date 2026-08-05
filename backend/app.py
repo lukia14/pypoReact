@@ -120,7 +120,7 @@ with app.app_context():
     print("🚀 Banco SQLite gerado e configurado com sucesso!")
 
 # 3. Registro das Blueprints das suas rotas
-# from blueprints.usuario_bp import usuario_bp
+from blueprints.usuario_bp import usuario_bp
 from blueprints.mundo_bp import mundo_bp
 # from blueprints.modulo_bp import modulo_bp
 # from blueprints.fase_bp import fase_bp
@@ -129,7 +129,7 @@ from blueprints.mundo_bp import mundo_bp
 # from blueprints.estoque_bp import estoque_bp
 # from blueprints.progresso_bp import progresso_bp
 
-# app.register_blueprint(usuario_bp, url_prefix='/api/usuarios')
+app.register_blueprint(usuario_bp, url_prefix='/api/usuarios')
 app.register_blueprint(mundo_bp, url_prefix='/api/mundos')
 # app.register_blueprint(modulo_bp, url_prefix='/api/modulos')
 # app.register_blueprint(fase_bp, url_prefix='/api/fases')
