@@ -9,3 +9,11 @@ class ModuloModel(bd.Model):
 
     def __repr__(self):
         return'<Modulo %r>' % self.nome
+
+    def to_dict(self):
+        return {
+            'idModulo': self.idModulo,
+            'numero': self.numero,
+            'nome': self.nome,
+            'idMundo': self.idMundo
+        }

@@ -122,7 +122,7 @@ with app.app_context():
 # 3. Registro das Blueprints das suas rotas
 from blueprints.usuario_bp import usuario_bp
 from blueprints.mundo_bp import mundo_bp
-# from blueprints.modulo_bp import modulo_bp
+from blueprints.modulo_bp import modulo_bp
 # from blueprints.fase_bp import fase_bp
 # from blueprints.exercicio_bp import exercicio_bp
 # from blueprints.item_bp import item_bp
@@ -131,7 +131,7 @@ from blueprints.mundo_bp import mundo_bp
 
 app.register_blueprint(usuario_bp, url_prefix='/api/usuarios')
 app.register_blueprint(mundo_bp, url_prefix='/api/mundos')
-# app.register_blueprint(modulo_bp, url_prefix='/api/modulos')
+app.register_blueprint(modulo_bp, url_prefix='/api/modulos')
 # app.register_blueprint(fase_bp, url_prefix='/api/fases')
 # app.register_blueprint(exercicio_bp, url_prefix='/api/exercicios')
 # app.register_blueprint(item_bp, url_prefix='/api/itens')
