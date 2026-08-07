@@ -23,3 +23,11 @@ class UsuarioModel(bd.Model):
         cascade='all, delete-orphan',
         passive_deletes=True
     )
+    def to_dict(self):
+        return {
+            'idUsuario': self.idUsuario,
+            'nickname': self.nickname,
+            'email': self.email,
+            'senha': self.senha,
+            'pontuacao': self.pontuacao
+        }

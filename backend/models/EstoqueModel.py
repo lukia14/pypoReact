@@ -13,3 +13,10 @@ class EstoqueModel(bd.Model):
         nullable=False
     )
     qtd = bd.Column(bd.Integer, nullable=False, default=1)
+
+    def to_dict(self):
+        return {
+            'idUsuario': self.idUsuario,
+            'idItem': self.idItem,
+            'qtd': self.qtd
+        }
