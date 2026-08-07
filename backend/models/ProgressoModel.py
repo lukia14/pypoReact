@@ -1,8 +1,21 @@
 from database import bd
+
 class ProgressoModel(bd.Model):
     __tablename__ = 'Progresso'
-    idUsuario = bd.Column(bd.Integer, bd.ForeignKey('Usuario.idUsuario'), primary_key=True)
-    idFase = bd.Column(bd.Integer, bd.ForeignKey('Fase.idFase'), primary_key=True)
+    
+    # Adicionado ondelete='CASCADE' na ForeignKey
+    idUsuario = bd.Column(
+        bd.Integer, 
+        bd.ForeignKey('Usuario.idUsuario', ondelete='CASCADE'), 
+        primary_key=True
+    )
+    idFase = bd.Column(bd.Integer, bd.ForeignKey('Fase.idFase', ondelete='CASCADE'), nullable=False)
 
     def __repr__(self):
-        return'<Progresso %r>' % self.idUsuario
+        return f'<Progresso Usuario:{self.idUsuario} Fase:{self.idFase}>'
+
+    def to_dict(self):
+        return {
+            'idUsuario': self.idUsuario,
+            'idFase': self.idFase
+        }

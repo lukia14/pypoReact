@@ -10,13 +10,13 @@ class MundoDao:
         mundo = MundoModel.query.all()
         if mundo:
             return jsonify([item.to_dict() for item in mundo])
+        return jsonify({'message': 'Nenhum mundo encontrado'}), 404
 
     def get_mundo_por_id(self, id):
         mundo = MundoModel.query.get(id)
         if mundo:
             return jsonify(mundo.to_dict())
-        else:
-            return jsonify({'message': 'Mundo não encontrado'}), 404
+        return jsonify({'message': 'Mundo não encontrado'}), 404
 
    # No MundoDao.py
     def post_mundo(self, mundo):

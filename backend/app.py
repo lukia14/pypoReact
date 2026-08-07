@@ -11,13 +11,6 @@ CORS(app)
 app.config.from_object(Config)
 bd.init_app(app)
 
-# Ativa suporte a chaves estrangeiras no SQLite
-@event.listens_for(Engine, "connect")
-def set_sqlite_pragma(dbapi_connection, connection_record):
-    cursor = dbapi_connection.cursor()
-    cursor.execute("PRAGMA foreign_keys=ON")
-    cursor.close()
-
 
 # 1. Importação de TODOS os Models para criação das tabelas
 from models.UsuarioModel import UsuarioModel
@@ -30,22 +23,24 @@ from models.EstoqueModel import EstoqueModel
 from models.ProgressoModel import ProgressoModel
 
 def criar_dados_padrao():
-    # Verifica se o usuário padrão ou o mundo padrão já existe
+    # Verifica se os dados essenciais já existem antes de popular
     usuario_existe = UsuarioModel.query.filter_by(nickname="player_teste").first()
+    mundo_existe = MundoModel.query.get(1)
 
-    if not usuario_existe:
+    if not usuario_existe and not mundo_existe:
         print("🌱 Populando banco de dados com dados iniciais...")
 
         # 1. Criar Usuário Padrão
         usuario_padrao = UsuarioModel(
             nickname="player_teste",
             email="teste@email.com",
-            senha="senha_hash_segura",  # Em produção, gerar com o bcrypt
+            senha="senha_hash_segura",  # Em produção, gerar com bcrypt
             pontuacao=0,
         )
         bd.session.add(usuario_padrao)
 
-        mundo_python = MundoModel(idMundo=1,linguagem="Python")
+        # 2. Criar Mundo Padrão (deixando o banco autoincrementar ou definindo id se necessário)
+        mundo_python = MundoModel(linguagem="Python")
         bd.session.add(mundo_python)
 
         # Gera o idUsuario e idMundo no banco
@@ -60,7 +55,7 @@ def criar_dados_padrao():
         # Gera o idModulo
         bd.session.flush()
 
-        # Vincula o idModulo recém-gerado de volta ao Mundo
+        # Vincula o idModulo recém-gerado de volta ao Mundo (se a relação exigir)
         mundo_python.idModulo = modulo_basico.idModulo
 
         # 4. Criar Fase vinculada ao Módulo
@@ -111,7 +106,8 @@ def criar_dados_padrao():
         print(
             "✅ Usuário, Mundo, Exercícios, Estoque e Progresso criados com sucesso!"
         )
-
+    else:
+        print("⚡ Dados padrão já existem no banco de dados.")
 
 # 2. Criação das tabelas e execução do seed no contexto da aplicação
 with app.app_context():
@@ -127,7 +123,7 @@ from blueprints.fase_bp import fase_bp
 from blueprints.exercicio_bp import exercicio_bp
 from blueprints.item_bp import item_bp
 # from blueprints.estoque_bp import estoque_bp
-# from blueprints.progresso_bp import progresso_bp
+from blueprints.progresso_bp import progresso_bp
 
 app.register_blueprint(usuario_bp, url_prefix='/api/usuarios')
 app.register_blueprint(mundo_bp, url_prefix='/api/mundos')
@@ -135,8 +131,8 @@ app.register_blueprint(modulo_bp, url_prefix='/api/modulos')
 app.register_blueprint(fase_bp, url_prefix='/api/fases')
 app.register_blueprint(exercicio_bp, url_prefix='/api/exercicios')
 app.register_blueprint(item_bp, url_prefix='/api/itens')
-# app.register_blueprint(estoque_bp, url_prefix='/api/estoques')
-# app.register_blueprint(progresso_bp, url_prefix='/api/progressos')
+#pp.register_blueprint(estoque_bp, url_prefix='/api/estoques')
+app.register_blueprint(progresso_bp, url_prefix='/api/progressos')
 
 if __name__ == '__main__':
     app.run(debug=True)

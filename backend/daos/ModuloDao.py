@@ -2,18 +2,6 @@ from models.ModuloModel import ModuloModel
 from flask import jsonify
 from database import bd
 from sqlalchemy import func
-
-# from database import bd
-# class ModuloModel(bd.Model):
-#     __tablename__ = 'Modulo'
-#     idModulo = bd.Column(bd.Integer, primary_key=True, autoincrement=True)
-#     numero = bd.Column(bd.Integer, nullable=False)
-#     nome = bd.Column(bd.String(25), nullable=False, unique=True)
-#     idMundo = bd.Column(bd.Integer, bd.ForeignKey('Mundo.idMundo'))
-#     fase = bd.relationship('FaseModel', backref='modulo', lazy=True)
-
-#     def __repr__(self):
-#         return'<Modulo %r>' % self.nome
 class ModuloDao:
     def __init__(self):
         pass
@@ -22,13 +10,13 @@ class ModuloDao:
         modulo = ModuloModel.query.all()
         if modulo:
             return jsonify([item.to_dict() for item in modulo])
-
+        return jsonify({'message': 'Nenhum modulo encontrado'}), 404
+    
     def get_modulo_por_id(self, id):
         modulo = ModuloModel.query.get(id)
         if modulo:
             return jsonify(modulo.to_dict())
-        else:
-            return jsonify({'message': 'Modulo não encontrado'}), 404
+        return jsonify({'message': 'Modulo não encontrado'}), 404
 
    # No ModuloDao.py
     def post_modulo(self, modulo):

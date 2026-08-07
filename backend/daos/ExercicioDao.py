@@ -10,13 +10,13 @@ class ExercicioDao:
         exercicio = ExercicioModel.query.all()
         if exercicio:
             return jsonify([item.to_dict() for item in exercicio])
+        return jsonify({'message': 'Nenhum exercicio encontrado'}), 404
 
     def get_exercicio_por_id(self, id):
         exercicio = ExercicioModel.query.get(id)
         if exercicio:
             return jsonify(exercicio.to_dict())
-        else:
-            return jsonify({'message': 'Exercicio não encontrado'}), 404
+        return jsonify({'message': 'Exercicio não encontrado'}), 404
 
    # No ExercicioDao.py
     def post_exercicio(self, exercicio):

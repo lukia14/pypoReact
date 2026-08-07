@@ -17,13 +17,14 @@ class ItemDao:
         item = ItemModel.query.all()
         if item:
             return jsonify([item.to_dict() for item in item])
+        return jsonify({'message': 'Nenhum item encontrado'}), 404
 
     def get_item_por_id(self, id):
         item = ItemModel.query.get(id)
         if item:
             return jsonify(item.to_dict())
-        else:
-            return jsonify({'message': 'Item não encontrado'}), 404
+
+        return jsonify({'message': 'Item não encontrado'}), 404
 
    # No ItemDao.py
     def post_item(self, item):

@@ -1,7 +1,8 @@
 from daos.UsuarioDao import UsuarioDao
+from daos.ProgressoDao import ProgressoDao
 from flask import request
 oUsuarioDao = UsuarioDao()
-
+oProgressoDao = ProgressoDao()
 class UsuarioService:
     def __init__(self):
         pass

@@ -10,13 +10,13 @@ class UsuarioDao:
         usuario = UsuarioModel.query.all()
         if usuario:
             return jsonify([item.to_dict() for item in usuario])
+        return jsonify({'message': 'Nenhum usuario encontrado'}), 404
 
     def get_usuario_por_id(self, id):
         usuario = UsuarioModel.query.get(id)
         if usuario:
             return jsonify(usuario.to_dict())
-        else:
-            return jsonify({'message': 'Usuario not found'}), 404
+        return jsonify({'message': 'Usuario not found'}), 404
 
 
     def post_usuario(self, usuario):

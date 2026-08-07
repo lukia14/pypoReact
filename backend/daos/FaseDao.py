@@ -12,13 +12,13 @@ class FaseDao:
         fase = FaseModel.query.all()
         if fase:
             return jsonify([item.to_dict() for item in fase])
+        return jsonify({'message': 'Nenhuma fase encontrada'}), 404
 
     def get_fase_por_id(self, id):
         fase = FaseModel.query.get(id)
         if fase:
             return jsonify(fase.to_dict())
-        else:
-            return jsonify({'message': 'Fase não encontrada'}), 404
+        return jsonify({'message': 'Fase não encontrada'}), 404
 
    # No FaseDao.py
     def post_fase(self, fase):
