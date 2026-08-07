@@ -9,3 +9,11 @@ class ItemModel(bd.Model):
 
    def __repr__(self):
         return'<Item %r>' % self.nome
+
+   def to_dict(self):
+        return {
+            'idItem': self.idItem,
+            'nome': self.nome,
+            'descricao': self.descricao,
+            'valor': self.valor
+        }
