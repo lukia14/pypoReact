@@ -10,5 +10,10 @@ class FaseModel(bd.Model):
         return'<Fase %r>' % self.materialApoio
 
 
-    def __repr__(self):
-        return'<Exercicio %r>' % self.exercicio
+    def to_dict(self):
+        return {
+            'idFase': self.idFase,
+            'titulo': self.titulo,
+            'materialApoio': self.materialApoio,
+            'idModulo': self.idModulo
+        }
