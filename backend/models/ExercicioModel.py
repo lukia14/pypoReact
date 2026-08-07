@@ -15,29 +15,16 @@ class ExercicioModel(bd.Model):
     def __repr__(self):
         return'<Exercicio %r>' % self.titulo
     
-    @staticmethod
-    def modeloExercicio(form):
-        idExercicio = form.idExercicio.data
-        titulo = form.titulo.data
-        enunciado = form.enunciado.data
-        alternativaA = form.alternativaA.data
-        alternativaB = form.alternativaB.data
-        alternativaC = form.alternativaC.data
-        alternativaD = form.alternativaD.data
-        resposta = form.resposta.data
-        idFase = form.idFase.data
-        numero = form.numero.data
-
-        exercicio = ExercicioModel(
-            idExercicio=idExercicio,
-            titulo=titulo,
-            enunciado=enunciado,
-            alternativaA=alternativaA,
-            alternativaB=alternativaB,
-            alternativaC=alternativaC,
-            alternativaD=alternativaD,
-            resposta=resposta,
-            idFase=idFase,
-            numero=numero
-        )
-        return exercicio
+    def to_dict(self):
+        return {
+            'idExercicio': self.idExercicio,
+            'titulo': self.titulo,
+            'enunciado': self.enunciado,
+            'alternativaA': self.alternativaA,
+            'alternativaB': self.alternativaB,
+            'alternativaC': self.alternativaC,
+            'alternativaD': self.alternativaD,
+            'resposta': self.resposta,
+            'idFase': self.idFase,
+            'numero': self.numero
+        }
